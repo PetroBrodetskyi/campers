@@ -1,0 +1,64 @@
+.typeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    width: 360px;
+    height: 167px;
+    margin-bottom: 64px;
+}
+
+.radioGroup {
+    display: flex;
+    gap: 10px;
+}
+
+.typeTitle {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+}
+
+.input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    border: 1px solid var(--light-grey);
+    border-radius: 10px;
+    height: 95px;
+    cursor: pointer;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.icon {
+    width: 40px;
+    height: 28px;
+}
+
+.input:checked + .label {
+    border: 1px solid var(--red);
+}
+
+.labelTitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    text-align: center;
+}

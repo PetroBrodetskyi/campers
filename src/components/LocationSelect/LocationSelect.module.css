@@ -1,0 +1,48 @@
+.locationContainer {
+    margin: 20px 0;
+    position: relative;
+}
+
+.inputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 20px;
+    stroke: black;
+    fill: transparent;
+}
+
+.locationInput {
+    width: calc(100% - 24px - 10px);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
+    border-radius: 10px;
+    padding: 18px 18px 18px 44px;
+
+    width: 360px;
+    height: 56px;
+    border: none;
+    background-color: var(--inputs);
+}
+
+.locationInput:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px var(--red);
+}
+
+.locationResult {
+    padding-top: 12px;
+    padding-left: 12px;
+    font-size: 16px;
+    color: var(--light-grey);
+    cursor: pointer;
+}

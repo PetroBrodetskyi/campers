@@ -1,0 +1,68 @@
+.equipmentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    width: 360px;
+    margin-bottom: 64px;
+}
+
+.checkboxGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 360px;
+}
+
+.equipmentTitle {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+}
+
+.input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    border: 1px solid var(--light-grey);
+    border-radius: 10px;
+    height: 95px;
+    cursor: pointer;
+    min-width: 112px;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    stroke: var(--dark-grey);
+    fill: transparent;
+}
+
+.input:checked + .label {
+    border: 1px solid var(--red);
+}
+
+.labelTitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    text-align: center;
+}
