@@ -52,5 +52,4 @@ const AdvertCard = ({ advert }) => {
     );
 };
 
-
 export default AdvertCard;

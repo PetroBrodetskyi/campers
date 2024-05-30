@@ -11,5 +11,5 @@ export default defineConfig({
             assets: '/src/assets',
         },
     },
-    base: '/vite-react-eslint-starter-template',
+    base: '/camper',
 });
