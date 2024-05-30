@@ -1,0 +1,40 @@
+.advertContainer {
+    display: flex;
+    gap: 24px;
+    border: 1px solid rgba(16, 24, 40, 0.2);
+    border-radius: 20px;
+    padding: 24px;
+    width: 888px;
+    height: 358px;
+}
+
+.image {
+    border-radius: 10px;
+    width: 290px;
+    height: 310px;
+    object-fit: cover;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 526px;
+    height: 310px;
+}
+
+.namePriceFlex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ratingLocationFlex {
+    display: flex;
+    gap: 16px;
+}
+
+.container {
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

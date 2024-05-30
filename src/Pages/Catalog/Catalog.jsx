@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import AdvertCard from '../../components/AdvertCard/AdvertCard.jsx';
+import SubmitButton from 'components/SubmitButton/SubmitButton.jsx';
+import css from './Catalog.module.css';
 
 const Catalog = () => {
     const [adverts, setAdverts] = useState([]);
@@ -22,10 +24,12 @@ const Catalog = () => {
 
     return (
         <div>
-            {adverts.map((advert) => (
-                <AdvertCard key={advert.id} advert={advert} />
-            ))}
-            <button onClick={loadMoreAdverts}>Load more</button>
+            <div className={css.catalogFlex}>
+                {adverts.map((advert) => (
+                    <AdvertCard key={advert.id} advert={advert} />
+                ))}
+            </div>
+            <SubmitButton buttonText="Load more" onClick={loadMoreAdverts} />
         </div>
     );
 };
