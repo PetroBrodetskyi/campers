@@ -15,10 +15,10 @@ const App = () => {
             <AppBar />
             <div className={css.pageContainer}>
                 <Routes basename={baseName}>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/home" element={<Home />} />
                     <Route path="/catalog" element={<Catalog />} />
                     <Route path="/favorites" element={<Favorites />} />
-                    <Route path="*" element={<Navigate to="/" />} />
+                    <Route path="*" element={<Navigate to="/home" />} />
                 </Routes>
             </div>
         </div>
