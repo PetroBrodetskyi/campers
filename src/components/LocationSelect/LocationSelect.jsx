@@ -1,25 +1,38 @@
 import { useState, useEffect } from 'react';
 import css from './LocationSelect.module.css';
 import { icons } from 'assets/icons';
+import axios from 'axios';
 
 const LocationSelect = () => {
-    const [inputValue, setInputValue] = useState('');
-    const [selectedLocation, setSelectedLocation] = useState(null);
+    const [inputValue, setInputValue] = useState(() => {
+        return localStorage.getItem('selectedLocation') || '';
+    });
     const [showLocations, setShowLocations] = useState(false);
+    const [locations, setLocations] = useState([]);
 
     useEffect(() => {
-        const savedLocation = localStorage.getItem('selectedLocation');
-        if (savedLocation) {
-            setSelectedLocation(savedLocation);
-            setInputValue(savedLocation);
-        }
-    }, []);
+        const fetchLocations = async () => {
+            try {
+                const { data } = await axios.get(
+                    'https://66588f105c3617052648fa9e.mockapi.io/api/campers'
+                );
+                const uniqueLocations = [
+                    ...new Set(data.map((item) => item.location)),
+                ];
+                const formattedLocations = uniqueLocations.map(
+                    (location, index) => ({
+                        id: index.toString(),
+                        name: location,
+                    })
+                );
+                setLocations(formattedLocations);
+            } catch (error) {
+                console.error('Помилка при отриманні даних з бази:', error);
+            }
+        };
 
-    const locations = [
-        { id: 'locationkiiv', name: 'Kiiv, Ukraine' },
-        { id: 'locationodesa', name: 'Odesa, Ukraine' },
-        { id: 'locationlviv', name: 'Lviv, Ukraine' },
-    ];
+        fetchLocations();
+    }, []);
 
     const handleInputClick = () => {
         setInputValue('');
@@ -27,22 +40,16 @@ const LocationSelect = () => {
     };
 
     const handleInputChange = (event) => {
-        const value = event.target.value;
+        const { value } = event.target;
         setInputValue(value);
-        setSelectedLocation(null);
         setShowLocations(true);
     };
 
     const handleResultClick = (locationName) => {
         setInputValue(locationName);
-        setSelectedLocation(locationName);
         setShowLocations(false);
         localStorage.setItem('selectedLocation', locationName);
     };
-
-    const filteredLocations = locations.filter(
-        (loc) => loc.name.toLowerCase().includes(inputValue.toLowerCase())
-    );
 
     return (
         <div className={css.locationContainer}>
@@ -62,22 +69,16 @@ const LocationSelect = () => {
             </div>
             {showLocations && (
                 <div className={css.locationList}>
-                    {filteredLocations.map((location) => (
+                    {locations.map(({ id, name }) => (
                         <div
-                            key={location.id}
+                            key={id}
                             className={css.locationResult}
-                            onClick={() => handleResultClick(location.name)}
+                            onClick={() => handleResultClick(name)}
                         >
-                            {location.name}
+                            {name}
                         </div>
                     ))}
                 </div>
-            )}
-            {selectedLocation && !showLocations && (
-                <div
-                    className={css.locationResult}
-                    onClick={() => handleResultClick(selectedLocation)}
-                ></div>
             )}
         </div>
     );

@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import css from './FilterEquipments.module.css';
 import { icons } from 'assets/icons';
 
@@ -32,7 +32,7 @@ const FilterEquipments = () => {
             <h2 className={css.equipmentTitle}>Vehicle equipment</h2>
             <div className={css.checkboxGroup}>
                 {checkboxOptions.map(({ id, title }) => (
-                    <Fragment key={id} className={css.checkboxItem}>
+                    <div key={id} className={css.checkboxItem}>
                         <input
                             className={css.input}
                             type="checkbox"
@@ -48,7 +48,7 @@ const FilterEquipments = () => {
                             </svg>
                             <p className={css.labelTitle}>{title}</p>
                         </label>
-                    </Fragment>
+                    </div>
                 ))}
             </div>
         </div>

@@ -6,20 +6,16 @@ const toTitleCase = (str) => {
 };
 
 const DetailsList = ({ advert }) => {
-    const { adults, transmission, engine, kitchen, beds, airConditioner } =
-        advert;
+    const { adults, transmission, engine, kitchen, beds, airConditioner } = advert;
+
     const details = [
-        { label: `${adults} adults`, icon: 'icon-adults' },
-        { label: transmission, icon: 'icon-automatic' },
-        { label: engine, icon: 'icon-petrol' },
-        {
-            label: 'Kitchen',
-            icon: 'icon-kitchen',
-            isValid: kitchen !== undefined,
-        },
-        { label: `${beds} beds`, icon: 'icon-beds' },
-        { label: 'AC', icon: 'icon-ac', isValid: airConditioner !== undefined },
-    ];
+        { label: `${adults} adults`, icon: 'icon-adults', value: adults },
+        { label: transmission, icon: 'icon-automatic', value: transmission },
+        { label: engine, icon: 'icon-petrol', value: engine },
+        { label: 'Kitchen', icon: 'icon-kitchen', value: kitchen },
+        { label: `${beds} beds`, icon: 'icon-beds', value: beds },
+        { label: 'AC', icon: 'icon-ac', value: airConditioner },
+    ].filter((detail) => detail.value !== undefined);
 
     return (
         <ul className={css.detailsList}>

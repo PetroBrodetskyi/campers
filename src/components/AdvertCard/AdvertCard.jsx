@@ -46,48 +46,50 @@ const AdvertCard = ({ advert }) => {
                         </button>
                     </div>
                 </div>
-                <div className={css.ratingLocationFlex}>
-                    <div className={css.iconsFlex}>
-                        <svg className={css.iconStar}>
-                            <use href={`${icons}#icon-star`}></use>
-                        </svg>
-                        <p className={css.rating}>
-                            {advert.rating}({advert.adults} Reviews)
-                        </p>
-                    </div>
-                    <div className={css.iconsFlex}>
-                        <svg className={css.iconLocation}>
-                            <use href={`${icons}#icon-location`}></use>
-                        </svg>
-                        <p className={css.location}>{advert.location}</p>
-                    </div>
-                </div>
                 <div className={css.container}>
-                    <p className={css.description}>{advert.description}</p>
-                </div>
-                <DetailsList
-                    advert={{
-                        adults: advert.adults,
-                        transmission: advert.transmission,
-                        engine: advert.engine,
-                        kitchen: advert.details.kitchen,
-                        beds: advert.details.beds,
-                        AC: advert.details.airConditioner,
-                    }}
-                />
-                <SubmitButton
-                    buttonText="Show more"
-                    onClick={() => {
-                        setIsModalOpen(true);
-                    }}
-                />
-                {isModalOpen && (
-                    <AdvertModal
-                        advert={advert}
-                        isOpen={isModalOpen}
-                        onClose={() => setIsModalOpen(false)}
+                    <div className={css.ratingLocationFlex}>
+                        <div className={css.iconsFlex}>
+                            <svg className={css.iconStar}>
+                                <use href={`${icons}#icon-star`}></use>
+                            </svg>
+                            <p className={css.rating}>
+                                {advert.rating}({advert.adults} Reviews)
+                            </p>
+                        </div>
+                        <div className={css.iconsFlex}>
+                            <svg className={css.iconLocation}>
+                                <use href={`${icons}#icon-location`}></use>
+                            </svg>
+                            <p className={css.location}>{advert.location}</p>
+                        </div>
+                    </div>
+                    <div className={css.textContainer}>
+                        <p className={css.description}>{advert.description}</p>
+                    </div>
+                    <DetailsList
+                        advert={{
+                            adults: advert.adults,
+                            transmission: advert.transmission,
+                            engine: advert.engine,
+                            kitchen: advert.details.kitchen,
+                            beds: advert.details.beds,
+                            airConditioner: advert.details.airConditioner,
+                        }}
                     />
-                )}
+                    <SubmitButton
+                        buttonText="Show more"
+                        onClick={() => {
+                            setIsModalOpen(true);
+                        }}
+                    />
+                    {isModalOpen && (
+                        <AdvertModal
+                            advert={advert}
+                            isOpen={isModalOpen}
+                            onClose={() => setIsModalOpen(false)}
+                        />
+                    )}
+                </div>
             </div>
         </div>
     );
