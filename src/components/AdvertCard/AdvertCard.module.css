@@ -24,7 +24,34 @@
 
 .namePriceFlex {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 125%;
+}
+
+.priceFavoriteFlex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 125%;
+}
+
+.icon {
+    stroke: var(--dark-grey);
+    fill: none;
+    &:check {
+        stroke: var(--red);
+    }
 }
 
 .ratingLocationFlex {
@@ -33,7 +60,7 @@
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

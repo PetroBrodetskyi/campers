@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import Modal from '../Modal/Modal.jsx';
+import AdvertModal from '../AdvertModal/AdvertModal.jsx';
 import css from './AdvertCard.module.css';
-import SubmitButton from 'components/SubmitButton/SubmitButton.jsx';
+import SubmitButton from '../SubmitButton/SubmitButton.jsx';
+import { icons } from 'assets/icons';
 
 const AdvertCard = ({ advert }) => {
     const [isFavorite, setIsFavorite] = useState(
@@ -31,8 +32,18 @@ const AdvertCard = ({ advert }) => {
             />
             <div className={css.info}>
                 <div className={css.namePriceFlex}>
-                    <h2>{advert.name}</h2>
-                    <p>Price: {advert.price.toFixed(2)}</p>
+                    <h2 className={css.title}>{advert.name}</h2>
+                    <div className={css.priceFavoriteFlex}>
+                        <p className={css.price}>€{advert.price.toFixed(2)}</p>
+                        <button
+                            onClick={toggleFavorite}
+                            className={css.hertFavorite}
+                        >
+                            <svg className={css.icon}>
+                                <use href={`${icons}#icon-hert`}></use>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
                 <div className={css.ratingLocationFlex}>
                     <p>Rating: {advert.rating}</p>
@@ -41,28 +52,16 @@ const AdvertCard = ({ advert }) => {
                 <div className={css.container}>
                     <p className={css.description}>{advert.description}</p>
                 </div>
-                {/* <div>
-                    <ul>
-                        {Object.entries(advert.details).map(([key, value]) => (
-                            <li key={key}>
-                                {key}: {value}
-                            </li>
-                        ))}
-                    </ul>
-                </div> */}
-                <button
-                    onClick={toggleFavorite}
-                    style={{ color: isFavorite ? 'red' : 'black' }}
-                >
-                ♥
-                </button>
                 <SubmitButton
                     buttonText="Show more"
-                    onClick={() => setIsModalOpen(true)}
+                    onClick={() => {
+                        setIsModalOpen(true);
+                    }}
                 />
                 {isModalOpen && (
-                    <Modal
+                    <AdvertModal
                         advert={advert}
+                        isOpen={isModalOpen}
                         onClose={() => setIsModalOpen(false)}
                     />
                 )}

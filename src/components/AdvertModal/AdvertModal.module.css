@@ -1,0 +1,60 @@
+.modal {
+    background-color: #fff;
+    width: 982px;
+    height: auto;
+    padding: 40px;
+    border-radius: 20px;
+    z-index: 100;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    overflow: hidden;
+    overflow-y: auto;
+    z-index: 99;
+    @include transition(opacity);
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+}
+
+.nameCloseFlex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.imageContainer {
+    display: flex;
+    gap: 16px;
+}
+
+.image {
+    border-radius: 10px;
+    width: 290px;
+    height: 310px;
+    object-fit: cover;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 125%;
+}
+
+.closeIcon {
+    stroke: var(--dark-grey);
+}

@@ -1,8 +1,8 @@
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import css from './FilterTypes.module.css';
 import { icons } from 'assets/icons';
 
-const FilterTypesGroup = () => {
+const FilterTypes = () => {
     const [selectedOption, setSelectedOption] = useState('icon-camperone');
 
     const radioOptions = [
@@ -22,7 +22,7 @@ const FilterTypesGroup = () => {
             <h2 className={css.typeTitle}>Vehicle type</h2>
             <div className={css.radioGroup}>
                 {radioOptions.map(({ id, title }) => (
-                    <Fragment key={id} className={css.radioItem}>
+                    <div key={id} className={css.radioItem}>
                         <input
                             className={css.input}
                             type="radio"
@@ -38,11 +38,11 @@ const FilterTypesGroup = () => {
                             </svg>
                             <p className={css.labelTitle}>{title}</p>
                         </label>
-                    </Fragment>
+                    </div>
                 ))}
             </div>
         </div>
     );
 };
 
-export default FilterTypesGroup;
+export default FilterTypes;

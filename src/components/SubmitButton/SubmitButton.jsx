@@ -1,6 +1,6 @@
 import css from './SubminButton.module.css';
 
-const SubmitButton = ({ buttonText, onSubmit, onClick }) => {
+const SubmitButton = ({ buttonText, onClick }) => {
     switch (buttonText) {
         case 'Search':
             return (
@@ -10,13 +10,13 @@ const SubmitButton = ({ buttonText, onSubmit, onClick }) => {
             );
         case 'Show more':
             return (
-                <button className={css.button} type="submit" onClick={onSubmit}>
+                <button className={css.button} type="button" onClick={onClick}>
                     {buttonText}
                 </button>
             );
         case 'Load more':
             return (
-                <button className={css.button} type="submit" onClick={onSubmit}>
+                <button className={css.button} type="button" onClick={onClick}>
                     {buttonText}
                 </button>
             );
@@ -25,7 +25,7 @@ const SubmitButton = ({ buttonText, onSubmit, onClick }) => {
                 <button
                     onClick={onClick}
                     className={css.buttonWrapper}
-                    type="submit"
+                    type="button"
                 >
                     {buttonText}
                 </button>
