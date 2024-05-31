@@ -70,9 +70,9 @@ const AdvertCard = ({ advert }) => {
                         adults: advert.adults,
                         transmission: advert.transmission,
                         engine: advert.engine,
-                        kitchen: advert.kitchen,
+                        kitchen: advert.details.kitchen,
                         beds: advert.details.beds,
-                        AC: advert.airConditioner,
+                        AC: advert.details.airConditioner,
                     }}
                 />
                 <SubmitButton
