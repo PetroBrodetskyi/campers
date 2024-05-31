@@ -2,6 +2,7 @@ import { useState } from 'react';
 import AdvertModal from '../AdvertModal/AdvertModal.jsx';
 import css from './AdvertCard.module.css';
 import SubmitButton from '../SubmitButton/SubmitButton.jsx';
+import DetailsList from '../DetailsList/DetailsList.jsx';
 import { icons } from 'assets/icons';
 
 const AdvertCard = ({ advert }) => {
@@ -46,12 +47,34 @@ const AdvertCard = ({ advert }) => {
                     </div>
                 </div>
                 <div className={css.ratingLocationFlex}>
-                    <p>Rating: {advert.rating}</p>
-                    <p>Location: {advert.location}</p>
+                    <div className={css.iconsFlex}>
+                        <svg className={css.iconStar}>
+                            <use href={`${icons}#icon-star`}></use>
+                        </svg>
+                        <p className={css.rating}>
+                            {advert.rating}({advert.adults} Reviews)
+                        </p>
+                    </div>
+                    <div className={css.iconsFlex}>
+                        <svg className={css.iconLocation}>
+                            <use href={`${icons}#icon-location`}></use>
+                        </svg>
+                        <p className={css.location}>{advert.location}</p>
+                    </div>
                 </div>
                 <div className={css.container}>
                     <p className={css.description}>{advert.description}</p>
                 </div>
+                <DetailsList
+                    advert={{
+                        adults: advert.adults,
+                        transmission: advert.transmission,
+                        engine: advert.engine,
+                        kitchen: advert.kitchen,
+                        beds: advert.details.beds,
+                        AC: advert.airConditioner,
+                    }}
+                />
                 <SubmitButton
                     buttonText="Show more"
                     onClick={() => {

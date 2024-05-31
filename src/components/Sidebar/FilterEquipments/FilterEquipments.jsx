@@ -6,7 +6,7 @@ const FilterEquipments = () => {
     const [selectedOptions, setSelectedOptions] = useState(['icon-camperone']);
 
     const checkboxOptions = [
-        { id: 'icon-airac', title: 'AC' },
+        { id: 'icon-ac', title: 'AC' },
         { id: 'icon-authomat', title: 'Automatic' },
         { id: 'icon-knife', title: 'Kitchen' },
         { id: 'icon-tv', title: 'TV' },
