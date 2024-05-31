@@ -13,8 +13,8 @@ const App = () => {
             <div className={css.pageContainer}>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="catalog" element={<Catalog />} />
-                    <Route path="favorites" element={<Favorites />} />
+                    <Route path="/catalog" element={<Catalog />} />
+                    <Route path="/favorites" element={<Favorites />} />
                     <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
             </div>

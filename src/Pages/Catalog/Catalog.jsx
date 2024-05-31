@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import AdvertCard from '../../components/AdvertCard/AdvertCard.jsx';
-import SubmitButton from 'components/SubmitButton/SubmitButton.jsx';
+import SubmitButton from '../../components/SubmitButton/SubmitButton.jsx';
 import css from './Catalog.module.css';
 
 const Catalog = () => {
