@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://yourusername.github.io/camper",
+  "homepage": "https://PetroBrodetskyi.github.io/camper",
   "scripts": {
     "start": "vite",
     "build": "vite build",

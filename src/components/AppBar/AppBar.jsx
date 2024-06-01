@@ -11,7 +11,7 @@ const AppBar = () => {
     return (
         <div className={css.navFlex}>
             <nav className={css.navContainer}>
-                <Link className={css.navItem} to="/home">
+                <Link className={css.navItem} to="/">
                     <MdOutlineHomeWork />
                     <p>Home</p>
                 </Link>
