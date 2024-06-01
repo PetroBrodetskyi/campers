@@ -4,9 +4,9 @@ import Loader from '../components/Loader/Loader.jsx';
 import AppBar from './AppBar/AppBar.jsx';
 import css from './App.module.css';
 
-const Home = lazy(() => import('../pages/Home/Home.jsx'));
-const Catalog = lazy(() => import('../pages/Catalog/Catalog.jsx'));
-const Favorites = lazy(() => import('../pages/Favorites/Favorites.jsx'));
+const Home = lazy(() => import('../Pages/Home/Home.jsx'));
+const Catalog = lazy(() => import('../Pages/Catalog/Catalog.jsx'));
+const Favorites = lazy(() => import('../Pages/Favorites/Favorites.jsx'));
 
 const appRoutes = [
     { path: '/', element: <Home /> },
