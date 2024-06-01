@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import css from './FilterTypes.module.css';
-import { icons } from 'assets/icons';
+import icons from '../../../assets/icons/icons.svg';
 
 const FilterTypes = () => {
     const [selectedOption, setSelectedOption] = useState('icon-camperone');

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import css from './LocationSelect.module.css';
-import { icons } from 'assets/icons';
+import icons from '../../assets/icons/icons.svg';
 import axios from 'axios';
 
 const LocationSelect = () => {

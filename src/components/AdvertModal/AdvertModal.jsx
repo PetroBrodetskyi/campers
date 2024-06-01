@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Modal from 'react-modal';
-import { icons } from 'assets/icons';
+import icons from '../../assets/icons/icons.svg';
 import css from './AdvertModal.module.css';
-import FeaturesReviews from 'components/FeaturesReviews/FeaturesReviews.jsx';
+import FeaturesReviews from '../FeaturesReviews/FeaturesReviews.jsx';
 
 const AdvertModal = ({ isOpen, onClose, advert }) => {
     const [activeTab, setActiveTab] = useState('details');

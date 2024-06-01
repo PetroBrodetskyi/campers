@@ -3,7 +3,7 @@ import AdvertModal from '../AdvertModal/AdvertModal.jsx';
 import css from './AdvertCard.module.css';
 import SubmitButton from '../SubmitButton/SubmitButton.jsx';
 import DetailsList from '../DetailsList/DetailsList.jsx';
-import { icons } from 'assets/icons';
+import icons from '../../assets/icons/icons.svg';
 
 const AdvertCard = ({ advert }) => {
     const [isFavorite, setIsFavorite] = useState(

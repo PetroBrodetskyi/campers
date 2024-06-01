@@ -1,5 +1,5 @@
 import css from './DetailsList.module.css';
-import { icons } from 'assets/icons';
+import icons from '../../assets/icons/icons.svg';
 
 const toTitleCase = (str) => {
     return str.replace(/\b\w/g, (char) => char.toUpperCase());
