@@ -47,13 +47,18 @@
     line-height: 125%;
 }
 
-.icon {
+.heartFavorite {
     stroke: var(--dark-grey);
     fill: none;
     &:hover {
         fill: var(--red);
         stroke: var(--red);
     }
+}
+
+.heartFavorite.favorite .icon {
+    fill: var(--red);
+    stroke: var(--red);
 }
 
 .iconStar {

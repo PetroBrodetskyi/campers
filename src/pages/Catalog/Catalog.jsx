@@ -24,11 +24,11 @@ const Catalog = () => {
 
     return (
         <div>
-            <div className={css.catalogFlex}>
+            <ul className={css.catalogFlex}>
                 {adverts.map((advert) => (
-                    <AdvertCard key={advert.id} advert={advert} />
+                    <AdvertCard key={advert._id} advert={advert} />
                 ))}
-            </div>
+            </ul>
             <SubmitButton buttonText="Load more" onClick={loadMoreAdverts} />
         </div>
     );

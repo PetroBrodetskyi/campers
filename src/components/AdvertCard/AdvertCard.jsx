@@ -1,27 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AdvertModal from '../AdvertModal/AdvertModal.jsx';
 import css from './AdvertCard.module.css';
 import SubmitButton from '../SubmitButton/SubmitButton.jsx';
 import DetailsList from '../DetailsList/DetailsList.jsx';
 import icons from '../../assets/icons/icons.svg';
 
-const AdvertCard = ({ advert }) => {
-    const [isFavorite, setIsFavorite] = useState(
-        JSON.parse(localStorage.getItem('favorites'))?.some(
-            (fav) => fav.id === advert.id
-        ) || false
-    );
+const AdvertCard = ({ advert, updateFavorites }) => {
+    const [isFavorite, setIsFavorite] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    useEffect(() => {
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        setIsFavorite(favorites.some((fav) => fav._id === advert._id));
+    }, [advert._id]);
 
     const toggleFavorite = () => {
         let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
         if (isFavorite) {
-            favorites = favorites.filter((fav) => fav.id !== advert.id);
+            favorites = favorites.filter((fav) => fav._id !== advert._id);
         } else {
             favorites.push(advert);
         }
         localStorage.setItem('favorites', JSON.stringify(favorites));
         setIsFavorite(!isFavorite);
+        if (updateFavorites) {
+            updateFavorites(favorites);
+        }
     };
 
     return (
@@ -38,7 +42,7 @@ const AdvertCard = ({ advert }) => {
                         <p className={css.price}>€{advert.price.toFixed(2)}</p>
                         <button
                             onClick={toggleFavorite}
-                            className={css.hertFavorite}
+                            className={`${css.heartFavorite} ${isFavorite ? css.favorite : ''}`}
                         >
                             <svg className={css.icon}>
                                 <use href={`${icons}#icon-hert`}></use>
@@ -53,7 +57,7 @@ const AdvertCard = ({ advert }) => {
                                 <use href={`${icons}#icon-star`}></use>
                             </svg>
                             <p className={css.rating}>
-                                {advert.rating}({advert.adults} Reviews)
+                                {advert.rating} ({advert.adults} Reviews)
                             </p>
                         </div>
                         <div className={css.iconsFlex}>
