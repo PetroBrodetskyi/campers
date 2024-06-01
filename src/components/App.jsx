@@ -9,10 +9,10 @@ const Catalog = lazy(() => import('../Pages/Catalog/Catalog.jsx'));
 const Favorites = lazy(() => import('../Pages/Favorites/Favorites.jsx'));
 
 const appRoutes = [
-    { path: '/home', element: <Home /> },
+    { path: '/', element: <Home /> },
     { path: '/catalog', element: <Catalog /> },
     { path: '/favorites', element: <Favorites /> },
-    { path: '*', element: <Navigate to="/home" /> },
+    { path: '*', element: <Navigate to="/" /> },
 ];
 
 const App = () => {
@@ -20,13 +20,7 @@ const App = () => {
         <div className={css.container}>
             <AppBar />
             <div className={css.pageContainer}>
-                <Suspense
-                    fallback={
-                        <div>
-                            <Loader />
-                        </div>
-                    }
-                >
+                <Suspense fallback={<Loader />}>
                     <Routes>
                         {appRoutes.map(({ path, element }) => (
                             <Route key={path} path={path} element={element} />
