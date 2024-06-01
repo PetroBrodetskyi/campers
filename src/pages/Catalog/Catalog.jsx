@@ -7,13 +7,22 @@ import css from './Catalog.module.css';
 const Catalog = () => {
     const [adverts, setAdverts] = useState([]);
     const [page, setPage] = useState(1);
+    const [hasMore, setHasMore] = useState(true);
 
     useEffect(() => {
         const fetchAdverts = async () => {
-            const response = await axios.get(
-                `https://66588f105c3617052648fa9e.mockapi.io/api/campers?page=${page}&limit=4`
-            );
-            setAdverts(response.data);
+            try {
+                const response = await axios.get(
+                    `https://66588f105c3617052648fa9e.mockapi.io/api/campers?page=${page}&limit=4`
+                );
+                if (response.data.length === 0) {
+                    setHasMore(false);
+                } else {
+                    setAdverts([...adverts, ...response.data]);
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
         };
         fetchAdverts();
     }, [page]);
@@ -29,7 +38,12 @@ const Catalog = () => {
                     <AdvertCard key={advert._id} advert={advert} />
                 ))}
             </ul>
-            <SubmitButton buttonText="Load more" onClick={loadMoreAdverts} />
+            {hasMore && (
+                <SubmitButton
+                    buttonText="Load more"
+                    onClick={loadMoreAdverts}
+                />
+            )}
         </div>
     );
 };
