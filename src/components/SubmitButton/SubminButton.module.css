@@ -13,3 +13,38 @@
         background-color: var(--dark-red);
     }
 }
+
+.buttonLoad {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    border: 1px solid rgba(71, 84, 103, 0.2);
+    border-radius: 200px;
+    padding: 16px 32px;
+    width: 145px;
+    height: 56px;
+
+    &:is(:hover, :focus) {
+        border: 1px solid var(--dark-red);
+    }
+}
+
+.buttonAdd {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 200px;
+    padding: 16px 16px;
+    width: 173px;
+    height: 56px;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #fff;
+    background-color: var(--red);
+
+    &:is(:hover, :focus) {
+        background-color: var(--dark-red);
+    }
+}

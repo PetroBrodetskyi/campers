@@ -1,0 +1,23 @@
+.scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.scrollToTop.visible {
+    opacity: 1;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    fill: var(--light-grey);
+
+    &:is(:hover, :focus) {
+        fill: var(--dark-red);
+        stroke: var(--dark-red);
+    }
+}

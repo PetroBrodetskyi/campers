@@ -50,7 +50,7 @@
 .heartFavorite {
     stroke: var(--dark-grey);
     fill: none;
-    &:hover {
+    &:active {
         fill: var(--red);
         stroke: var(--red);
     }
@@ -59,6 +59,10 @@
 .heartFavorite.favorite .icon {
     fill: var(--red);
     stroke: var(--red);
+    &:active {
+        fill: transparent;
+        stroke: var(--dark-grey);
+    }
 }
 
 .iconStar {

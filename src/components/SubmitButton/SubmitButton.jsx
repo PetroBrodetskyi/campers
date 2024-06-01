@@ -1,3 +1,4 @@
+import { GoPlus } from "react-icons/go";
 import css from './SubminButton.module.css';
 
 const SubmitButton = ({ buttonText, onClick }) => {
@@ -16,8 +17,23 @@ const SubmitButton = ({ buttonText, onClick }) => {
             );
         case 'Load more':
             return (
-                <button className={css.button} type="button" onClick={onClick}>
+                <button
+                    className={css.buttonLoad}
+                    type="button"
+                    onClick={onClick}
+                >
                     {buttonText}
+                </button>
+            );
+        case 'Add':
+            return (
+                <button
+                    className={css.buttonAdd}
+                    type="button"
+                    onClick={onClick}
+                >
+                    {buttonText}
+                    <GoPlus />
                 </button>
             );
         default:
