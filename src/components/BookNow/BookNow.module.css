@@ -33,7 +33,13 @@
     padding: 18px;
     width: 400px;
     height: 56px;
+    border: none;
     background-color: var(--inputs);
+}
+
+.input:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px var(--red);
 }
 
 .textarea {
@@ -41,4 +47,10 @@
     padding: 18px;
     width: 400px;
     height: 114px;
+    border: none;
+}
+
+.textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px var(--red);
 }

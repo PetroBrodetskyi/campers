@@ -12,6 +12,8 @@
 .iconStar {
     border: 1.2px solid var(--rating);
     width: 16px;
+    fill: #ffc531;
+    stroke: #ffc531;
 }
 
 .rating {

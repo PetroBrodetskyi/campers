@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SubmitButton from '../SubmitButton/SubmitButton.jsx';
 import css from '../BookNow/BookNow.module.css';
 
 const BookNow = () => {
@@ -78,9 +79,7 @@ const BookNow = () => {
                     value={formData.comment}
                     onChange={handleChange}
                 />
-                <button className={css.submitButton} type="submit">
-                    Book Now
-                </button>
+                <SubmitButton buttonText="Send" onClick={handleSubmit} />
             </form>
         </div>
     );

@@ -25,6 +25,12 @@ const SubmitButton = ({ buttonText, onClick }) => {
                     {buttonText}
                 </button>
             );
+        case 'Send':
+            return (
+                <button className={css.button} type="submit" onClick={onClick}>
+                    {buttonText}
+                </button>
+            );
         case 'Add':
             return (
                 <button

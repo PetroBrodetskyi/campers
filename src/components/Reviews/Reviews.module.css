@@ -6,3 +6,52 @@
 .reviewsContainer {
     width: 430px;
 }
+
+.reviewsListFlex {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.reviewsItemContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.initial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 125%;
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+    color: var(--red);
+    background-color: var(--features);
+}
+
+.initialRatingFlex {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nameRatingFlex {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 133%;
+}
+
+.comment {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}

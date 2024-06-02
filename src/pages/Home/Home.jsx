@@ -4,7 +4,9 @@ const Home = () => {
     return (
         <div className={css.homeContainer}>
             <h1>Welcome to Camper Rental Services</h1>
-            <h2 className={css.title}>We provide various camper rental services across Ukraine.</h2>
+            <h2 className={css.title}>
+                We provide various camper rental services across Ukraine.
+            </h2>
             <p className={css.text}>
                 At Camper Rental Services, we are dedicated to making your
                 travel dreams come true. We offer a diverse range of camper
