@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import Modal from 'react-modal';
 import icons from '../../assets/icons/icons.svg';
-import FeaturesReviews from '../FeaturesReviews/FeaturesReviews.jsx';
+import Features from '../Features/Features.jsx';
+import Reviews from '../Reviews/Reviews.jsx';
 import RatingLocation from '../RatingLocation/RatingLocation.jsx';
+import Tabs from '../Tabs/Tabs.jsx';
 import css from './AdvertModal.module.css';
 
 const AdvertModal = ({ isOpen, onClose, advert }) => {
@@ -30,11 +32,13 @@ const AdvertModal = ({ isOpen, onClose, advert }) => {
                     </svg>
                 </button>
             </div>
-            <RatingLocation
-                rating={advert.rating}
-                reviews={advert.adults}
-                location={advert.location}
-            />
+            <div className={css.ratingLocationContainer}>
+                <RatingLocation
+                    rating={advert.rating}
+                    reviews={advert.adults}
+                    location={advert.location}
+                />
+            </div>
             <p className={css.price}>€{advert.price.toFixed(2)}</p>
             <div className={css.imageDescContainer}>
                 <div className={css.imageContainer}>
@@ -49,11 +53,19 @@ const AdvertModal = ({ isOpen, onClose, advert }) => {
                 </div>
                 <p className={css.descText}>{advert.description}</p>
             </div>
-            <FeaturesReviews
-                activeTab={activeTab}
-                handleTabChange={handleTabChange}
-                advert={advert}
-            />
+            <Tabs activeTab={activeTab} onTabChange={handleTabChange} />
+            <div className={css.tabContent}>
+                {activeTab === 'details' && (
+                    <div className={css.detailsContent}>
+                        <Features advert={advert} />
+                    </div>
+                )}
+                {activeTab === 'reviews' && (
+                    <div className={css.reviewsContent}>
+                        <Reviews advert={advert} />
+                    </div>
+                )}
+            </div>
         </Modal>
     );
 };

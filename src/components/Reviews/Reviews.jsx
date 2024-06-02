@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import css from './FeaturesReviews.module.css';
+import css from './Reviews.module.css';
 
-const FeaturesReviews = ({ activeTab, handleTabChange, advert }) => {
+const Reviews = ({ advert }) => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -33,32 +33,13 @@ const FeaturesReviews = ({ activeTab, handleTabChange, advert }) => {
     };
 
     return (
-        <>
-            <div className={css.tabs}>
-                <button
-                    className={`${css.tab} ${activeTab === 'details' ? css.active : ''}`}
-                    onClick={() => handleTabChange('details')}
-                >
-                    Features
-                </button>
-                <button
-                    className={`${css.tab} ${activeTab === 'reviews' ? css.active : ''}`}
-                    onClick={() => handleTabChange('reviews')}
-                >
-                    Reviews
-                </button>
-            </div>
-
-            {activeTab === 'details' && <div className={css.tabContent}></div>}
-            {activeTab === 'reviews' && (
-                <div className={css.tabContent}>
-                    {advert.reviews.map((review, index) => (
-                        <div key={index}>
-                            <p>{review}</p>
-                        </div>
-                    ))}
+        <div className={css.reviewsContainer}>
+            <h4 className={css.reviewsTitle}>Reviews</h4>
+            {advert.reviews.map((review, index) => (
+                <div key={index} className={css.review}>
+                    <p>{review}</p>
                 </div>
-            )}
+            ))}
             <form onSubmit={handleSubmit} className={css.form}>
                 <input
                     className={css.input}
@@ -101,8 +82,8 @@ const FeaturesReviews = ({ activeTab, handleTabChange, advert }) => {
                     Book Now
                 </button>
             </form>
-        </>
+        </div>
     );
 };
 
-export default FeaturesReviews;
+export default Reviews;

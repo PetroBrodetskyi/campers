@@ -1,0 +1,23 @@
+.tabsLineFlex {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.tabsContainer {
+    display: flex;
+    gap: 40px;
+}
+
+.tab {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+}
+
+.line {
+    width: 902px;
+    height: 1px;
+    background: rgba(16, 24, 40, 0.2);
+    margin-bottom: 44px;
+}

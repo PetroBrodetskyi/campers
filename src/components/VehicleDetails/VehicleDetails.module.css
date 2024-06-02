@@ -1,0 +1,35 @@
+.vehicleDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 430px;
+}
+
+.detailsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.detailValueFlex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detailLabel {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 133%;
+}
+
+.detailValue {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 133%;
+}
+
+.line {
+    width: 430px;
+    height: 1px;
+    background: rgba(16, 24, 40, 0.2);
+}

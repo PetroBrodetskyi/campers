@@ -43,6 +43,7 @@
     position: relative;
     margin-right: -16px;
     box-sizing: content-box;
+    margin-bottom: 44px;
 }
 
 .imageDescContainer::after {
@@ -72,6 +73,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .imageContainer {
@@ -102,8 +104,13 @@
     stroke: var(--dark-grey);
 }
 
+.ratingLocationContainer {
+    margin-bottom: 16px;
+}
+
 .price {
     font-weight: 600;
     font-size: 24px;
     line-height: 125%;
+    margin-bottom: 24px;
 }
