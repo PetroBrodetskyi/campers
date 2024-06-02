@@ -1,0 +1,48 @@
+.dateInputWrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.customInput {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 18px;
+    width: 400px;
+    height: 56px;
+    background-color: var(--inputs);
+    border: none;
+    box-sizing: border-box;
+}
+
+.input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.input:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px var(--red);
+}
+
+.icon {
+    margin-left: -40px;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+.datePicker {
+    width: 100%;
+}
+
+.datePickerWrapper {
+    width: 100%;
+}

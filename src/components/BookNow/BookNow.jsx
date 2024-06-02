@@ -1,36 +1,33 @@
-import { useState } from 'react';
-import SubmitButton from '../SubmitButton/SubmitButton.jsx';
-import css from '../BookNow/BookNow.module.css';
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
+import CustomInput from '../CustomInput/CustomInput';
+import CustomTextarea from '../CustomTextarea/CustomTextarea';
+import CustomDateInput from '../CustomDateInput/CustomDateInput';
+import SubmitButton from '../SubmitButton/SubmitButton';
+import css from './BookNow.module.css';
+
+const validationSchema = Yup.object().shape({
+    name: Yup.string().required('Name is required'),
+    email: Yup.string()
+        .email('Invalid email format')
+        .required('Email is required'),
+    date: Yup.string()
+        .matches(/^\d{2}\.\d{2}\.\d{4}$/, 'Date format should be dd.mm.yyyy')
+        .required('Date is required'),
+    comment: Yup.string(),
+});
 
 const BookNow = () => {
-    const [formData, setFormData] = useState({
+    const initialValues = {
         name: '',
         email: '',
         date: '',
         comment: '',
-    });
-    const [errors, setErrors] = useState({});
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const validate = () => {
-        const newErrors = {};
-        if (!formData.name) newErrors.name = 'Name is required';
-        if (!formData.email) newErrors.email = 'Email is required';
-        if (!formData.date) newErrors.date = 'Date is required';
-        return newErrors;
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const newErrors = validate();
-        if (Object.keys(newErrors).length > 0) {
-            setErrors(newErrors);
-        } else {
-            // Handle form submission logic
-        }
+    const handleSubmit = (values, { setSubmitting }) => {
+        console.log(values);
+        setSubmitting(false);
     };
 
     return (
@@ -41,46 +38,40 @@ const BookNow = () => {
                     Stay connected! We are always ready to help you.
                 </p>
             </div>
-            <form onSubmit={handleSubmit} className={css.form}>
-                <input
-                    className={css.input}
-                    name="name"
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                />
-                {errors.name && (
-                    <span className={css.error}>{errors.name}</span>
+            <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={handleSubmit}
+            >
+                {({ isSubmitting }) => (
+                    <Form className={css.form}>
+                        <Field
+                            name="name"
+                            placeholder="Name"
+                            component={CustomInput}
+                        />
+                        <Field
+                            name="email"
+                            placeholder="Email"
+                            component={CustomInput}
+                        />
+                        <Field
+                            name="date"
+                            placeholder="Booking Date"
+                            component={CustomDateInput}
+                        />
+                        <Field
+                            name="comment"
+                            placeholder="Comment"
+                            component={CustomTextarea}
+                        />
+                        <SubmitButton
+                            buttonText="Send"
+                            disabled={isSubmitting}
+                        />
+                    </Form>
                 )}
-                <input
-                    className={css.input}
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                />
-                {errors.email && (
-                    <span className={css.error}>{errors.email}</span>
-                )}
-                <input
-                    className={css.input}
-                    name="date"
-                    placeholder="Booking Date"
-                    value={formData.date}
-                    onChange={handleChange}
-                />
-                {errors.date && (
-                    <span className={css.error}>{errors.date}</span>
-                )}
-                <textarea
-                    className={css.textarea}
-                    name="comment"
-                    placeholder="Comment"
-                    value={formData.comment}
-                    onChange={handleChange}
-                />
-                <SubmitButton buttonText="Send" onClick={handleSubmit} />
-            </form>
+            </Formik>
         </div>
     );
 };
