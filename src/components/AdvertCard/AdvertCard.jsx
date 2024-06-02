@@ -15,6 +15,18 @@ const AdvertCard = ({ advert, updateFavorites }) => {
         setIsFavorite(favorites.some((fav) => fav._id === advert._id));
     }, [advert._id]);
 
+    useEffect(() => {
+        if (isModalOpen) {
+            document.body.classList.add('no-scroll');
+        } else {
+            document.body.classList.remove('no-scroll');
+        }
+
+        return () => {
+            document.body.classList.remove('no-scroll');
+        };
+    }, [isModalOpen]);
+
     const toggleFavorite = () => {
         let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
         if (isFavorite) {

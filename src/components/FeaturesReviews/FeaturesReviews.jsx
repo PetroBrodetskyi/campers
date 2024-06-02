@@ -49,13 +49,7 @@ const FeaturesReviews = ({ activeTab, handleTabChange, advert }) => {
                 </button>
             </div>
 
-            {activeTab === 'details' && (
-                <div className={css.tabContent}>
-                    <p>{advert.description}</p>
-                    <p>Price: €{advert.price.toFixed(2)}</p>
-                    {/* Add other details here */}
-                </div>
-            )}
+            {activeTab === 'details' && <div className={css.tabContent}></div>}
             {activeTab === 'reviews' && (
                 <div className={css.tabContent}>
                     {advert.reviews.map((review, index) => (
