@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AdvertCard from '../../components/AdvertCard/AdvertCard.jsx';
 import ScrollToTopButton from '../../components/ScrollToTopButton/ScrollToTopButton.jsx';
-import SubmitButton from 'components/SubmitButton/SubmitButton.jsx';
+import SubmitButton from '../../components/SubmitButton/SubmitButton.jsx';
 import icons from '../../assets/icons/icons.svg';
 import css from './Favorites.module.css';
 
