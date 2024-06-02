@@ -62,7 +62,7 @@ const AdvertModal = ({ isOpen, onClose, advert }) => {
                 )}
                 {activeTab === 'reviews' && (
                     <div className={css.reviewsContent}>
-                        <Reviews advert={advert} />
+                        <Reviews reviews={advert.reviews} />
                     </div>
                 )}
             </div>

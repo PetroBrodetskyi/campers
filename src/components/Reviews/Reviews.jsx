@@ -1,87 +1,16 @@
-import { useState } from 'react';
-import css from './Reviews.module.css';
-
-const Reviews = ({ advert }) => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        date: '',
-        comment: '',
-    });
-    const [errors, setErrors] = useState({});
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const validate = () => {
-        const newErrors = {};
-        if (!formData.name) newErrors.name = 'Name is required';
-        if (!formData.email) newErrors.email = 'Email is required';
-        if (!formData.date) newErrors.date = 'Date is required';
-        return newErrors;
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const newErrors = validate();
-        if (Object.keys(newErrors).length > 0) {
-            setErrors(newErrors);
-        } else {
-            // Handle form submission logic
-        }
-    };
-
+const Reviews = ({ reviews }) => {
     return (
-        <div className={css.reviewsContainer}>
-            <h4 className={css.reviewsTitle}>Reviews</h4>
-            {advert.reviews.map((review, index) => (
-                <div key={index} className={css.review}>
-                    <p>{review}</p>
-                </div>
-            ))}
-            <form onSubmit={handleSubmit} className={css.form}>
-                <input
-                    className={css.input}
-                    name="name"
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                />
-                {errors.name && (
-                    <span className={css.error}>{errors.name}</span>
-                )}
-                <input
-                    className={css.input}
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                />
-                {errors.email && (
-                    <span className={css.error}>{errors.email}</span>
-                )}
-                <input
-                    className={css.input}
-                    name="date"
-                    placeholder="Booking Date"
-                    value={formData.date}
-                    onChange={handleChange}
-                />
-                {errors.date && (
-                    <span className={css.error}>{errors.date}</span>
-                )}
-                <textarea
-                    className={css.textarea}
-                    name="comment"
-                    placeholder="Comment"
-                    value={formData.comment}
-                    onChange={handleChange}
-                />
-                <button className={css.submitButton} type="submit">
-                    Book Now
-                </button>
-            </form>
+        <div>
+            <h2>Reviews</h2>
+            <ul>
+                {reviews.map((review, index) => (
+                    <li key={index}>
+                        <p><strong>{review.reviewer_name}</strong></p>
+                        <p>Rating: {review.reviewer_rating}</p>
+                        <p>{review.comment}</p>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 };
