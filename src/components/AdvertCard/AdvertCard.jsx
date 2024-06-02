@@ -52,10 +52,10 @@ const AdvertCard = ({ advert, updateFavorites }) => {
                     </div>
                 </div>
                 <div className={css.container}>
-                    <RatingLocation 
-                        rating={advert.rating} 
-                        reviews={advert.adults} 
-                        location={advert.location} 
+                    <RatingLocation
+                        rating={advert.rating}
+                        reviews={advert.adults}
+                        location={advert.location}
                     />
                     <div className={css.textContainer}>
                         <p className={css.description}>{advert.description}</p>
