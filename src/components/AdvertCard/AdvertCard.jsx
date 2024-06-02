@@ -4,6 +4,7 @@ import css from './AdvertCard.module.css';
 import SubmitButton from '../SubmitButton/SubmitButton.jsx';
 import DetailsList from '../DetailsList/DetailsList.jsx';
 import icons from '../../assets/icons/icons.svg';
+import RatingLocation from '../RatingLocation/RatingLocation.jsx';
 
 const AdvertCard = ({ advert, updateFavorites }) => {
     const [isFavorite, setIsFavorite] = useState(false);
@@ -51,22 +52,11 @@ const AdvertCard = ({ advert, updateFavorites }) => {
                     </div>
                 </div>
                 <div className={css.container}>
-                    <div className={css.ratingLocationFlex}>
-                        <div className={css.iconsFlex}>
-                            <svg className={css.iconStar}>
-                                <use href={`${icons}#icon-star`}></use>
-                            </svg>
-                            <p className={css.rating}>
-                                {advert.rating} ({advert.adults} Reviews)
-                            </p>
-                        </div>
-                        <div className={css.iconsFlex}>
-                            <svg className={css.iconLocation}>
-                                <use href={`${icons}#icon-location`}></use>
-                            </svg>
-                            <p className={css.location}>{advert.location}</p>
-                        </div>
-                    </div>
+                    <RatingLocation 
+                        rating={advert.rating} 
+                        reviews={advert.adults} 
+                        location={advert.location} 
+                    />
                     <div className={css.textContainer}>
                         <p className={css.description}>{advert.description}</p>
                     </div>

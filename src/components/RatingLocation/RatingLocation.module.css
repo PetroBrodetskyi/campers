@@ -1,0 +1,35 @@
+.ratingLocationFlex {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.iconsFlex {
+    display: flex;
+    gap: 4px;
+}
+
+.iconStar {
+    border: 1.2px solid var(--rating);
+    width: 16px;
+}
+
+.rating {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+}
+
+.iconLocation {
+    stroke: var(--dark-grey);
+    fill: none;
+    width: 16px;
+}
+
+.location {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
