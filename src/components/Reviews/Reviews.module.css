@@ -1,0 +1,8 @@
+.reviewsBookNowFlex {
+    display: flex;
+    gap: 24px;
+}
+
+.reviewsContainer {
+    width: 430px;
+}

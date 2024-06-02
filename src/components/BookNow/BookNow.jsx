@@ -34,8 +34,12 @@ const BookNow = () => {
 
     return (
         <div className={css.reviewsContainer}>
-            <h4 className={css.reviewsTitle}>Book your campervan now</h4>
-            <p>Stay connected! We are always ready to help you.</p>
+            <div className={css.titleTextFlex}>
+                <h4 className={css.reviewsTitle}>Book your campervan now</h4>
+                <p className={css.reviewsText}>
+                    Stay connected! We are always ready to help you.
+                </p>
+            </div>
             <form onSubmit={handleSubmit} className={css.form}>
                 <input
                     className={css.input}
