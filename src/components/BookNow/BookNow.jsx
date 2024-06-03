@@ -5,6 +5,7 @@ import CustomTextarea from '../CustomTextarea/CustomTextarea';
 import CustomDateInput from '../CustomDateInput/CustomDateInput';
 import SubmitButton from '../SubmitButton/SubmitButton';
 import css from './BookNow.module.css';
+import { useEffect, useState } from 'react';
 
 const validationSchema = Yup.object().shape({
     name: Yup.string().required('Name is required'),
@@ -18,16 +19,32 @@ const validationSchema = Yup.object().shape({
 });
 
 const BookNow = () => {
-    const initialValues = {
+    const [initialValues, setInitialValues] = useState({
         name: '',
         email: '',
         date: '',
         comment: '',
-    };
+    });
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const handleSubmit = (values, { setSubmitting }) => {
+    useEffect(() => {
+        const savedValues = localStorage.getItem('formData');
+        if (savedValues) {
+            setInitialValues(JSON.parse(savedValues));
+        }
+    }, []);
+
+    const handleSubmit = (values, { setSubmitting, resetForm }) => {
         console.log(values);
         setSubmitting(false);
+        localStorage.removeItem('formData');
+        resetForm();
+        setIsSubmitted(true);
+        setTimeout(() => setIsSubmitted(false), 3000);
+    };
+
+    const handleFormChange = (values) => {
+        localStorage.setItem('formData', JSON.stringify(values));
     };
 
     return (
@@ -42,9 +59,13 @@ const BookNow = () => {
                 initialValues={initialValues}
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
+                enableReinitialize
             >
-                {({ isSubmitting }) => (
-                    <Form className={css.form}>
+                {({ isSubmitting, values }) => (
+                    <Form
+                        className={css.form}
+                        onChange={() => handleFormChange(values)}
+                    >
                         <Field
                             name="name"
                             placeholder="Name"
@@ -72,6 +93,11 @@ const BookNow = () => {
                     </Form>
                 )}
             </Formik>
+            {isSubmitted && (
+                <div className={css.successMessage}>
+                    Form submitted successfully!
+                </div>
+            )}
         </div>
     );
 };

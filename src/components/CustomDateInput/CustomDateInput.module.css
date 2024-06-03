@@ -30,8 +30,11 @@
 }
 
 .icon {
+    width: 20px;
     margin-left: -40px;
     cursor: pointer;
+    fill: none;
+    stroke: var(--dark-grey);
 }
 
 .error {

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import icons from '../../assets/icons/icons.svg';
@@ -6,6 +6,14 @@ import css from './CustomDateInput.module.css';
 
 const CustomDateInput = ({ field, form, ...props }) => {
     const [startDate, setStartDate] = useState(null);
+
+    useEffect(() => {
+        if (field.value) {
+            const dateParts = field.value.split('.');
+            const savedDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+            setStartDate(savedDate);
+        }
+    }, [field.value]);
 
     const handleChange = (date) => {
         setStartDate(date);
