@@ -3,6 +3,7 @@
     position: fixed;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.7);
+    z-index: 10;
 }
 
 .navContainer {
@@ -15,10 +16,29 @@
     gap: 10px;
     align-items: center;
     color: var(--light-grey);
-    &:hover {
-        color: var(--red);
-    }
-    &:focus {
-        color: var(--dark-grey);
-    }
+    position: relative;
+    text-decoration: none;
+}
+
+.navItem:hover {
+    color: var(--red);
+}
+
+.navItem:focus {
+    color: var(--dark-grey);
+}
+
+.navItem.active {
+    color: var(--red);
+}
+
+.navItem.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    left: 0;
+    top: calc(100% + 20px);
+    background-color: var(--red);
+    border-radius: 4px;
 }

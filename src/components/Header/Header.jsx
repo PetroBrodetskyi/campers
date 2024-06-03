@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {
     MdOutlineHomeWork,
     MdFormatListBulleted,
@@ -8,22 +8,37 @@ import css from './Header.module.css';
 
 const Header = () => {
     return (
-        <footer className={css.header}>
+        <header className={css.header}>
             <nav className={css.navContainer}>
-                <Link className={css.navItem} to="/">
+                <NavLink
+                    className={({ isActive }) =>
+                        isActive ? `${css.navItem} ${css.active}` : css.navItem
+                    }
+                    to="/"
+                >
                     <MdOutlineHomeWork />
                     <p>Home</p>
-                </Link>
-                <Link className={css.navItem} to="/catalog">
+                </NavLink>
+                <NavLink
+                    className={({ isActive }) =>
+                        isActive ? `${css.navItem} ${css.active}` : css.navItem
+                    }
+                    to="/catalog"
+                >
                     <MdFormatListBulleted />
                     <p>Catalog</p>
-                </Link>
-                <Link className={css.navItem} to="/favorites">
+                </NavLink>
+                <NavLink
+                    className={({ isActive }) =>
+                        isActive ? `${css.navItem} ${css.active}` : css.navItem
+                    }
+                    to="/favorites"
+                >
                     <MdFavoriteBorder />
                     <p>Favorites</p>
-                </Link>
+                </NavLink>
             </nav>
-        </footer>
+        </header>
     );
 };
 
