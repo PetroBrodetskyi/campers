@@ -15,6 +15,15 @@ const Features = ({ advert }) => {
                         kitchen: advert.details.kitchen,
                         beds: advert.details.beds,
                         airConditioner: advert.details.airConditioner,
+                        CD: advert.details.CD,
+                        radio: advert.details.radio,
+                        hob: advert.details.hob,
+                        toilet: advert.details.toilet,
+                        shower: advert.details.shower,
+                        freezer: advert.details.freezer,
+                        gas: advert.details.gas,
+                        water: advert.details.water,
+                        microwave: advert.details.microwave,
                     }}
                 ></DetailsList>
                 <VehicleDetails
