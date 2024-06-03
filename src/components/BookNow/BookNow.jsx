@@ -58,66 +58,68 @@ const BookNow = () => {
                     Stay connected! We are always ready to help you.
                 </p>
             </div>
-            <Formik
-                initialValues={initialValues}
-                validationSchema={validationSchema}
-                onSubmit={handleSubmit}
-                enableReinitialize
-            >
-                {({ isSubmitting, values, setFieldValue }) => (
-                    <Form className={css.form}>
-                        <Field
-                            name="name"
-                            placeholder="Name"
-                            component={CustomInput}
-                            onChange={(e) => {
-                                setFieldValue('name', e.target.value);
-                                handleFormChange({
-                                    ...values,
-                                    name: e.target.value,
-                                });
-                            }}
-                        />
-                        <Field
-                            name="email"
-                            placeholder="Email"
-                            component={CustomInput}
-                            onChange={(e) => {
-                                setFieldValue('email', e.target.value);
-                                handleFormChange({
-                                    ...values,
-                                    email: e.target.value,
-                                });
-                            }}
-                        />
-                        <Field
-                            name="date"
-                            placeholder="Booking Date"
-                            component={CustomDateInput}
-                            onChange={(date) => {
-                                setFieldValue('date', date);
-                                handleFormChange({ ...values, date: date });
-                            }}
-                        />
-                        <Field
-                            name="comment"
-                            placeholder="Comment"
-                            component={CustomTextarea}
-                            onChange={(e) => {
-                                setFieldValue('comment', e.target.value);
-                                handleFormChange({
-                                    ...values,
-                                    comment: e.target.value,
-                                });
-                            }}
-                        />
-                        <SubmitButton
-                            buttonText="Send"
-                            disabled={isSubmitting}
-                        />
-                    </Form>
-                )}
-            </Formik>
+            <div>
+                <Formik
+                    initialValues={initialValues}
+                    validationSchema={validationSchema}
+                    onSubmit={handleSubmit}
+                    enableReinitialize
+                >
+                    {({ isSubmitting, values, setFieldValue }) => (
+                        <Form className={css.form}>
+                            <Field
+                                name="name"
+                                placeholder="Name"
+                                component={CustomInput}
+                                onChange={(e) => {
+                                    setFieldValue('name', e.target.value);
+                                    handleFormChange({
+                                        ...values,
+                                        name: e.target.value,
+                                    });
+                                }}
+                            />
+                            <Field
+                                name="email"
+                                placeholder="Email"
+                                component={CustomInput}
+                                onChange={(e) => {
+                                    setFieldValue('email', e.target.value);
+                                    handleFormChange({
+                                        ...values,
+                                        email: e.target.value,
+                                    });
+                                }}
+                            />
+                            <Field
+                                name="date"
+                                placeholder="Booking Date"
+                                component={CustomDateInput}
+                                onChange={(date) => {
+                                    setFieldValue('date', date);
+                                    handleFormChange({ ...values, date: date });
+                                }}
+                            />
+                            <Field
+                                name="comment"
+                                placeholder="Comment"
+                                component={CustomTextarea}
+                                onChange={(e) => {
+                                    setFieldValue('comment', e.target.value);
+                                    handleFormChange({
+                                        ...values,
+                                        comment: e.target.value,
+                                    });
+                                }}
+                            />
+                            <SubmitButton
+                                buttonText="Send"
+                                disabled={isSubmitting}
+                            />
+                        </Form>
+                    )}
+                </Formik>
+            </div>
             <ToastContainer />
         </div>
     );

@@ -16,8 +16,12 @@
     transform: translateY(-50%);
     width: 18px;
     height: 20px;
-    stroke: black;
+    stroke: var(--placeholder);
     fill: transparent;
+}
+
+.iconBlack {
+    stroke: black;
 }
 
 .locationInput {

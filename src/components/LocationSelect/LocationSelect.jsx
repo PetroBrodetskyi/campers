@@ -9,6 +9,9 @@ const LocationSelect = () => {
     });
     const [showLocations, setShowLocations] = useState(false);
     const [locations, setLocations] = useState([]);
+    const [iconBlack, setIconBlack] = useState(
+        !!localStorage.getItem('selectedLocation')
+    );
 
     useEffect(() => {
         const fetchLocations = async () => {
@@ -27,7 +30,7 @@ const LocationSelect = () => {
                 );
                 setLocations(formattedLocations);
             } catch (error) {
-                console.error('Помилка при отриманні даних з бази:', error);
+                console.error('Base error:', error);
             }
         };
 
@@ -37,24 +40,29 @@ const LocationSelect = () => {
     const handleInputClick = () => {
         setInputValue('');
         setShowLocations(true);
+        setIconBlack(false);
     };
 
     const handleInputChange = (event) => {
         const { value } = event.target;
         setInputValue(value);
         setShowLocations(true);
+        setIconBlack(false);
     };
 
     const handleResultClick = (locationName) => {
         setInputValue(locationName);
         setShowLocations(false);
         localStorage.setItem('selectedLocation', locationName);
+        setIconBlack(true);
     };
 
     return (
         <div className={css.locationContainer}>
             <div className={css.inputContainer}>
-                <svg className={css.icon}>
+                <svg
+                    className={`${css.icon} ${iconBlack ? css.iconBlack : ''}`}
+                >
                     <use href={`${icons}#icon-location`}></use>
                 </svg>
                 <input

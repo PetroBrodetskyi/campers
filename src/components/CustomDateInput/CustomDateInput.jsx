@@ -47,6 +47,8 @@ const CustomDateInput = ({ field, form, ...props }) => {
                 }
                 wrapperClassName={css.datePickerWrapper}
                 calendarClassName={css.datePicker}
+                dayClassName={() => css.datePickerDay}
+                popperClassName={css.datePickerPopper}
             />
             {form.touched[field.name] && form.errors[field.name] && (
                 <span className={css.error}>{form.errors[field.name]}</span>
