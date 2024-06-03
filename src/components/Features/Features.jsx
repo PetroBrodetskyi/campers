@@ -1,8 +1,6 @@
 import DetailsList from '../DetailsList/DetailsList.jsx';
 import css from './Features.module.css';
 import VehicleDetails from '../VehicleDetails/VehicleDetails.jsx';
-import BookNow from '../BookNow/BookNow.jsx';
-
 const Features = ({ advert }) => {
     return (
         <div className={css.featuresBookNowFlex}>
@@ -36,7 +34,6 @@ const Features = ({ advert }) => {
                     }}
                 />
             </div>
-            <BookNow />
         </div>
     );
 };

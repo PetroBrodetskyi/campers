@@ -7,8 +7,7 @@
     --features: #f2f4f7;
     --inputs: #f7f7f7;
     --scroll: #d9d9d9;
-
-    --font-family: 'Inter', sans-serif;
+    --placeholder: rgba(16, 24, 40, 0.6);
 }
 
 body {

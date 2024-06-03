@@ -72,7 +72,10 @@ const BookNow = () => {
                             component={CustomInput}
                             onChange={(e) => {
                                 setFieldValue('name', e.target.value);
-                                handleFormChange({ ...values, name: e.target.value });
+                                handleFormChange({
+                                    ...values,
+                                    name: e.target.value,
+                                });
                             }}
                         />
                         <Field
@@ -81,7 +84,10 @@ const BookNow = () => {
                             component={CustomInput}
                             onChange={(e) => {
                                 setFieldValue('email', e.target.value);
-                                handleFormChange({ ...values, email: e.target.value });
+                                handleFormChange({
+                                    ...values,
+                                    email: e.target.value,
+                                });
                             }}
                         />
                         <Field
@@ -99,7 +105,10 @@ const BookNow = () => {
                             component={CustomTextarea}
                             onChange={(e) => {
                                 setFieldValue('comment', e.target.value);
-                                handleFormChange({ ...values, comment: e.target.value });
+                                handleFormChange({
+                                    ...values,
+                                    comment: e.target.value,
+                                });
                             }}
                         />
                         <SubmitButton

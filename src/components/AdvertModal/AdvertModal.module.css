@@ -114,3 +114,8 @@
     line-height: 125%;
     margin-bottom: 24px;
 }
+
+.tabBookFlex {
+    display: flex;
+    gap: 24px;
+}

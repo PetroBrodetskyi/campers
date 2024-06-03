@@ -5,13 +5,24 @@ import Features from '../Features/Features.jsx';
 import Reviews from '../Reviews/Reviews.jsx';
 import RatingLocation from '../RatingLocation/RatingLocation.jsx';
 import Tabs from '../Tabs/Tabs.jsx';
+import BookNow from '../BookNow/BookNow.jsx';
 import css from './AdvertModal.module.css';
 
 const AdvertModal = ({ isOpen, onClose, advert }) => {
-    const [activeTab, setActiveTab] = useState('details');
+    const [activeTab, setActiveTab] = useState(null);
+    const [showBookNow, setShowBookNow] = useState(false);
 
     const handleTabChange = (tab) => {
         setActiveTab(tab);
+        setShowBookNow(true);
+    };
+
+    const handleFeaturesClick = () => {
+        setActiveTab('details');
+    };
+
+    const handleReviewsClick = () => {
+        setActiveTab('reviews');
     };
 
     return (
@@ -53,18 +64,20 @@ const AdvertModal = ({ isOpen, onClose, advert }) => {
                 </div>
                 <p className={css.descText}>{advert.description}</p>
             </div>
-            <Tabs activeTab={activeTab} onTabChange={handleTabChange} />
-            <div className={css.tabContent}>
-                {activeTab === 'details' && (
-                    <div className={css.detailsContent}>
-                        <Features advert={advert} />
-                    </div>
-                )}
-                {activeTab === 'reviews' && (
-                    <div className={css.reviewsContent}>
+            <Tabs
+                activeTab={activeTab}
+                onTabChange={handleTabChange}
+                onFeaturesClick={handleFeaturesClick}
+                onReviewsClick={handleReviewsClick}
+            />
+            <div className={css.tabBookFlex}>
+                <div className={css.tabContent}>
+                    {activeTab === 'details' && <Features advert={advert} />}
+                    {activeTab === 'reviews' && (
                         <Reviews reviews={advert.reviews} />
-                    </div>
-                )}
+                    )}
+                </div>
+                {showBookNow && <BookNow />}
             </div>
         </Modal>
     );

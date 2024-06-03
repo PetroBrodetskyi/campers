@@ -1,5 +1,4 @@
 import css from '../Reviews/Reviews.module.css';
-import BookNow from '../BookNow/BookNow.jsx';
 import StarRating from '../StarRating/StarRating.jsx';
 
 const Reviews = ({ reviews }) => {
@@ -30,7 +29,6 @@ const Reviews = ({ reviews }) => {
                     ))}
                 </ul>
             </div>
-            <BookNow />
         </div>
     );
 };
