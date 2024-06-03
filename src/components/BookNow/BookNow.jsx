@@ -6,6 +6,8 @@ import CustomDateInput from '../CustomDateInput/CustomDateInput';
 import SubmitButton from '../SubmitButton/SubmitButton';
 import css from './BookNow.module.css';
 import { useEffect, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const validationSchema = Yup.object().shape({
     name: Yup.string().required('Name is required'),
@@ -25,7 +27,6 @@ const BookNow = () => {
         date: '',
         comment: '',
     });
-    const [isSubmitted, setIsSubmitted] = useState(false);
 
     useEffect(() => {
         const savedValues = localStorage.getItem('formData');
@@ -39,8 +40,7 @@ const BookNow = () => {
         setSubmitting(false);
         localStorage.removeItem('formData');
         resetForm();
-        setIsSubmitted(true);
-        setTimeout(() => setIsSubmitted(false), 3000);
+        toast.success('Form submitted successfully!');
     };
 
     const handleFormChange = (values) => {
@@ -93,11 +93,7 @@ const BookNow = () => {
                     </Form>
                 )}
             </Formik>
-            {isSubmitted && (
-                <div className={css.successMessage}>
-                    Form submitted successfully!
-                </div>
-            )}
+            <ToastContainer />
         </div>
     );
 };
