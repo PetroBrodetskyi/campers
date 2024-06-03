@@ -51,10 +51,10 @@ const BookNow = () => {
     };
 
     return (
-        <div className={css.reviewsContainer}>
+        <div className={css.bookNowContainer}>
             <div className={css.titleTextFlex}>
-                <h4 className={css.reviewsTitle}>Book your campervan now</h4>
-                <p className={css.reviewsText}>
+                <h4 className={css.bookNowTitle}>Book your campervan now</h4>
+                <p className={css.bookNowText}>
                     Stay connected! We are always ready to help you.
                 </p>
             </div>

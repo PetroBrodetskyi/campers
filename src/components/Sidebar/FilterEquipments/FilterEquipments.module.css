@@ -1,7 +1,7 @@
 .equipmentContainer {
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 24px;
     width: 360px;
     margin-bottom: 64px;
 }
@@ -65,4 +65,10 @@
     font-size: 16px;
     line-height: 125%;
     text-align: center;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background: rgba(16, 24, 40, 0.2);
 }

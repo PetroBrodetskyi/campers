@@ -30,6 +30,7 @@ const FilterEquipments = () => {
     return (
         <div className={css.equipmentContainer}>
             <h2 className={css.equipmentTitle}>Vehicle equipment</h2>
+            <div className={css.line}></div>
             <div className={css.checkboxGroup}>
                 {checkboxOptions.map(({ id, title }) => (
                     <div key={id} className={css.checkboxItem}>

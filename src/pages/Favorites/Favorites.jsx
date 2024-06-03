@@ -28,19 +28,21 @@ const Favorites = () => {
         <div className={css.favoritesContainer}>
             <div className={css.favoritesList}>
                 {favorites.length === 0 ? (
-                    <div className={css.emptyFavorites}>
-                        <div className={css.textIconFlex}>
-                            <p>No favorites yet</p>
-                            <button onClick={handleAddToFavorites}>
-                                <svg className={css.icon}>
-                                    <use href={`${icons}#icon-hert`}></use>
-                                </svg>
-                            </button>
+                    <div className={css.addToFavorites}>
+                        <div className={css.emptyFavorites}>
+                            <div className={css.textIconFlex}>
+                                <p>No favorites yet</p>
+                                <button onClick={handleAddToFavorites}>
+                                    <svg className={css.icon}>
+                                        <use href={`${icons}#icon-hert`}></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <SubmitButton
+                                buttonText="Add"
+                                onClick={handleAddToFavorites}
+                            />
                         </div>
-                        <SubmitButton
-                            buttonText="Add"
-                            onClick={handleAddToFavorites}
-                        />
                     </div>
                 ) : (
                     favorites

@@ -5,13 +5,13 @@ const Tabs = ({ activeTab, onTabChange }) => {
         <div className={css.tabsLineFlex}>
             <div className={css.tabsContainer}>
                 <button
-                    className={`${css.tab} ${activeTab === 'details' ? css.active : ''}`}
+                    className={`${css.tabDetails} ${activeTab === 'details' ? css.active : ''}`}
                     onClick={() => onTabChange('details')}
                 >
                     Features
                 </button>
                 <button
-                    className={`${css.tab} ${activeTab === 'reviews' ? css.active : ''}`}
+                    className={`${css.tabReviews} ${activeTab === 'reviews' ? css.active : ''}`}
                     onClick={() => onTabChange('reviews')}
                 >
                     Reviews

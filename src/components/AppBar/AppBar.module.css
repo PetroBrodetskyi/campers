@@ -1,19 +1,1 @@
-.navContainer {
-    display: flex;
-    gap: 54px;
-    padding-left: 32px;
-    padding-top: 32px;
-}
 
-.navItem {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    color: var(--light-grey);
-    &:hover {
-        color: var(--red);
-    }
-    &:focus {
-        color: var(--dark-grey);
-    }
-}

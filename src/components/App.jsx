@@ -2,6 +2,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import Loader from '../components/Loader/Loader.jsx';
 import AppBar from './AppBar/AppBar.jsx';
+import ScrollToTop from '../components/ScrollToTop/ScrollToTop.jsx';
 import css from './App.module.css';
 
 const Home = lazy(() => import('../pages/Home/Home.jsx'));
@@ -20,6 +21,7 @@ const App = () => {
         <div className={css.container}>
             <AppBar />
             <div className={css.pageContainer}>
+                <ScrollToTop />
                 <Suspense fallback={<Loader />}>
                     <Routes>
                         {appRoutes.map(({ path, element }) => (

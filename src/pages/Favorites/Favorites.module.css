@@ -4,6 +4,14 @@
     gap: 32px;
 }
 
+.addToFavorites {
+    border: 1px solid rgba(16, 24, 40, 0.2);
+    border-radius: 10px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
 .emptyFavorites {
     display: flex;
     flex-direction: column;
@@ -13,7 +21,6 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 120%;
-    height: 70vh;
 }
 
 .textIconFlex {

@@ -20,6 +20,7 @@ const FilterTypes = () => {
     return (
         <div className={css.typeContainer}>
             <h2 className={css.typeTitle}>Vehicle type</h2>
+            <div className={css.line}></div>
             <div className={css.radioGroup}>
                 {radioOptions.map(({ id, title }) => (
                     <div key={id} className={css.radioItem}>
