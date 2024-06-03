@@ -10,7 +10,11 @@ const CustomDateInput = ({ field, form, ...props }) => {
     useEffect(() => {
         if (field.value) {
             const dateParts = field.value.split('.');
-            const savedDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+            const savedDate = new Date(
+                dateParts[2],
+                dateParts[1] - 1,
+                dateParts[0]
+            );
             setStartDate(savedDate);
         }
     }, [field.value]);
@@ -21,6 +25,9 @@ const CustomDateInput = ({ field, form, ...props }) => {
             field.name,
             date ? date.toLocaleDateString('uk-UA') : ''
         );
+        if (props.onChange) {
+            props.onChange(date ? date.toLocaleDateString('uk-UA') : '');
+        }
     };
 
     return (
