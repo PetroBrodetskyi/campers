@@ -1,12 +1,125 @@
-<<<<<<< HEAD
-# React + Vite
+<h1 align="center">Додаток для оренди кемперів</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h2><a href="https://petrobrodetskyi.github.io/campers/">Camper Rental Services</a></h2>
 
-Currently, two official plugins are available:
+    <div>
+        <h2 align="center">Огляд</h2>
+        <p>Цей проєкт є тестовим завданням для створення веб-додатка для компанії, яка пропонує оренду кемперів в Україні. Додаток складається з трьох основних сторінок:</p>
+        <ul>
+            <li><strong>Головна сторінка:</strong> Загальний опис послуг, які надає компанія.</li>
+            <li><strong>Сторінка каталогу:</strong> Каталог кемперів з різною комплектацією.</li>
+            <li><strong>Сторінка улюблених:</strong> Список оголошень, які користувач додав до улюблених.</li>
+        </ul>
+    </div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-=======
-# camper
->>>>>>> e9b3c8442f5bd5fcf98dd08531d9b8afd9ecdd96
+    <div>
+        <h2 align="center">Функціонал</h2>
+
+        <h3 align="center">Головна сторінка</h3>
+        <ul>
+            <li>Загальний опис послуг компанії.</li>
+            <li>Адреса та телефон.</li>
+        </ul>
+
+        <h3 align="center">Сторінка каталогу</h3>
+        <ul>
+            <li>Відображає список оголошень про кемпери.</li>
+            <li>Спочатку відображається 4 оголошення, більше завантажуються при натисканні на кнопку "Load more".</li>
+            <li>Натискання на кнопку у вигляді серця на оголошенні додає його до списку улюблених і змінює колір кнопки.</li>
+            <li>Стан кнопки у вигляді серця зберігається при перезавантаженні сторінки.</li>
+            <li>Повторне натискання на кнопку у вигляді серця видаляє оголошення зі списку улюблених і повертає колір кнопки до початкового стану.</li>
+            <li>Натискання на кнопку "Show more" відкриває модальне вікно з детальною інформацією про кемпер.</li>
+            <li>Модальне вікно закривається при натисканні на кнопку закриття, натисканні на backdrop або натисканні клавіші Esc.</li>
+            <li>Модальне вікно містить деталі про кемпер і відгуки користувачів, які відображаються залежно від активної вкладки.</li>
+            <li>Модальне вікно також містить форму для бронювання кемпера, яка складається з полів name, email, booking date і comment. Поля name, email, booking date є обов'язковими і повинні проходять валідацію.</li>
+        </ul>
+
+        <h3 align="center">Сторінка улюблених</h3>
+        <ul>
+            <li>Відображає оголошення, додані користувачем до улюблених.</li>
+            <li>Відобжає кнопку, яка веде на сторінку каталогу, якщо до улюблених ще нічого не додано.</li>
+        </ul>
+    </div>
+
+    <div>
+        <h2 align="center">Виконані технічні вимоги</h2>
+        <ul>
+            <li>Фіксована верстка в пікселях, семантична та валідна HTML.</li>
+            <li>Відсутні помилки в консолі браузера.</li>
+            <li>Використаний Redux для керування станом.</li>
+            <li>Використаний Axios для HTTP-запитів.</li>
+            <li>Проект реалізований на нативному JavaScript з використанням бандлера Vite та React.</li>
+            <li>Інтерактивні елементи працюють відповідно до технічного завдання.</li>
+            <li>Код відформатований та без коментарів.</li>
+            <li>Проєкт задеплойований на <a href="https://github.com/PetroBrodetskyi/campers">GitHub Pages</a>.</li>
+        </ul>
+    </div>
+
+    <div>
+        <h2 align="center">Налаштування бекенду</h2>
+
+        <h3 align="center">MockAPI</h3>
+        <p>Використаний <a href="https://mockapi.io/">MockAPI</a> для створення персонального бекенду для розробки.</p>
+        <p>Створено ресурс з назвою <code>adverts</code> з наступними полями:</p>
+        <ul>
+            <li><code>_id</code></li>
+            <li><code>name</code></li>
+            <li><code>price</code></li>
+            <li><code>rating</code></li>
+            <li><code>location</code></li>
+            <li><code>adults</code></li>
+            <li><code>children</code></li>
+            <li><code>engine</code></li>
+            <li><code>transmission</code></li>
+            <li><code>form</code></li>
+            <li><code>length</code></li>
+            <li><code>width</code></li>
+            <li><code>height</code></li>
+            <li><code>tank</code></li>
+            <li><code>consumption</code></li>
+            <li><code>description</code></li>
+            <li><code>details</code></li>
+            <li><code>gallery</code></li>
+            <li><code>reviews</code></li>
+        </ul>
+        <p>База даних містить 13 оголошень з різними значеннями.</p>
+        <p>Реалізована пагінація з відображенням 4 оголошень на сторінці.</p>
+    </div>
+
+    <div>
+        <h2 align="center">Маршрутизація</h2>
+        <ul>
+            <li>Використаний React Router для маршрутизації.</li>
+            <li>Містить наступні маршрути:
+                <ul>
+                    <li><code>/</code> - Головна сторінка</li>
+                    <li><code>/catalog</code> - Сторінка каталогу</li>
+                    <li><code>/favorites</code> - Сторінка улюблених</li>
+                </ul>
+            </li>
+            <li>Виконується перенаправлення на головну сторінку для неіснуючих маршрутів.</li>
+        </ul>
+    </div>
+
+    <div>
+        <h2 align="center">Розробка та деплоймент</h2>
+        <ul>
+            <li>Додаток розроблений за допомогою React з бандлером Vite.</li>
+            <li>Проект задеплоєний на <a href="https://github.com/PetroBrodetskyi/campers">GitHub Pages</a>.</li>
+        </ul>
+    </div>
+
+    <div>
+        <h2 align="center">Для запуску проекту</h2>
+        <ul>
+            <li>Клонуйте репозиторій.</li>
+            <li>Встановіть залежності: <code>npm install</code></li>
+            <li>Запустіть сервер розробки: <code>npm run dev або npm start</code></li>
+            <li>Відкрийте браузер і перейдіть за адресою <code>http://localhost:3000</code></li>
+        </ul>
+    </div>
+
+    <div>
+        <h2 align="center">Висновок</h2>
+        <p>Цей README надає огляд додатку для оренди кемперів, його функціоналу, технічних вимог, налаштування бекенду, маршрутизації та інструкцій.</p>
+    </div>
