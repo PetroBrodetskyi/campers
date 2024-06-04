@@ -6,7 +6,7 @@ import CustomInput from '../CustomInput/CustomInput';
 import CustomTextarea from '../CustomTextarea/CustomTextarea';
 import CustomDateInput from '../CustomDateInput/CustomDateInput';
 import SubmitButton from '../SubmitButton/SubmitButton';
-import { updateFormData, resetFormData } from '../../store';
+import { updateFormData, resetFormData } from '../../redux/store';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import css from './BookNow.module.css';
