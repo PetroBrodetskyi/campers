@@ -39,6 +39,7 @@
 
 .react-datepicker__day--today {
     font-weight: bold;
+    background-color: var(--light-grey);
     color: white;
 }
 
