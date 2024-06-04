@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import icons from '../../assets/icons/icons.svg';
 import css from './CustomDateInput.module.css';
+import './date-picker.css';
 
 const CustomDateInput = ({ field, form, ...props }) => {
     const [startDate, setStartDate] = useState(null);
