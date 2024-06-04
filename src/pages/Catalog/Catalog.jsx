@@ -23,9 +23,9 @@ const Catalog = () => {
                 } else {
                     setAdverts([...adverts, ...response.data]);
                 }
-                setLoading(false);
             } catch (error) {
                 console.error('Error fetching data:', error);
+            } finally {
                 setLoading(false);
             }
         };
@@ -49,8 +49,7 @@ const Catalog = () => {
                     <AdvertCard key={advert._id} advert={advert} />
                 ))}
             </ul>
-            {loading}
-            {hasMore && (
+            {!loading && hasMore && (
                 <SubmitButton
                     buttonText="Load more"
                     onClick={loadMoreAdverts}
