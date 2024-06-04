@@ -39,7 +39,7 @@
 
 .react-datepicker__day--today {
     font-weight: bold;
-    color: var(--red);
+    color: white;
 }
 
 .react-datepicker__navigation--previous,
