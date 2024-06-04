@@ -93,7 +93,3 @@
     fill: none;
     stroke: var(--dark-grey);
 }
-
-.error {
-    color: var(--red);
-}

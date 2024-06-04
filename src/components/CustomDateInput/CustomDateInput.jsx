@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
+import Errors from '../Errors/Errors.jsx';
 import 'react-datepicker/dist/react-datepicker.css';
 import icons from '../../assets/icons/icons.svg';
 import css from './CustomDateInput.module.css';
@@ -51,9 +52,7 @@ const CustomDateInput = ({ field, form, ...props }) => {
                 dayClassName={() => css.datePickerDay}
                 popperClassName={css.datePickerPopper}
             />
-            {form.touched[field.name] && form.errors[field.name] && (
-                <span className={css.error}>{form.errors[field.name]}</span>
-            )}
+            <Errors field={field} form={form} />
         </div>
     );
 };
