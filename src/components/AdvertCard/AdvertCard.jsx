@@ -79,7 +79,7 @@ const AdvertCard = ({ advert, updateFavorites }) => {
                             engine: advert.engine,
                             kitchen: advert.details.kitchen,
                             beds: advert.details.beds,
-                            airConditioner: advert.details.airConditioner,
+                            AC: advert.details.AC,
                         }}
                     />
                     <SubmitButton

@@ -14,6 +14,7 @@ const Features = ({ advert }) => {
                         beds: advert.details.beds,
                         airConditioner: advert.details.airConditioner,
                         CD: advert.details.CD,
+                        AC: advert.details.AC,
                         radio: advert.details.radio,
                         hob: advert.details.hob,
                         toilet: advert.details.toilet,
