@@ -6,8 +6,8 @@ const Loader = () => {
         <div className={css.loaderContainer}>
             <Vortex
                 visible={true}
-                height="280"
-                width="280"
+                height="80"
+                width="80"
                 ariaLabel="vortex-loading"
                 wrapperStyle={{}}
                 wrapperClass="vortex-wrapper"
