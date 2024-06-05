@@ -66,7 +66,7 @@
 \_id name price rating location adults children engine transmission form length
 width height tank consumption description details gallery reviews
 
-У базі знаходиться 13 оголошеннь з різними значеннями.
+У базі знаходиться 15 оголошеннь з різними значеннями.
 
 Реалізована пагінація з відображенням 4 оголошень на сторінці.
 
@@ -160,7 +160,7 @@ A resource named `adverts` is created with the following fields:
 \_id name price rating location adults children engine transmission form length
 width height tank consumption description details gallery reviews
 
-The database contains 13 listings with different values.
+The database contains 15 listings with different values.
 
 Pagination is implemented to display 4 listings per page.
 
