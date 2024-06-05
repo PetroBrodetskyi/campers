@@ -1,4 +1,4 @@
-# Додаток для оренди кемперів <img src="./public/camper.svg" alt="My SVG Icon" width="50" height="50" />
+# Додаток для оренди кемперів <img src="./public/camper.svg" alt="My SVG Icon" width="48" height="48" />
 
 **Camper Rental Services**
 
@@ -92,7 +92,7 @@ GitHub Pages.
 3. Запустіть сервер розробки: npm run dev або npm start
 4. Відкрийте браузер і перейдіть за адресою http://localhost:3000
 
-# Camper Rental App <img src="./public/camper.svg" alt="My SVG Icon" width="50" height="50" />
+# Camper Rental App <img src="./public/camper.svg" alt="My SVG Icon" width="48" height="48" />
 
 **Camper Rental Services**
 

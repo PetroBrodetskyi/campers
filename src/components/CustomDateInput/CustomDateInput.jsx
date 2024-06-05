@@ -39,6 +39,7 @@ const CustomDateInput = ({ field, form, ...props }) => {
                 onChange={handleChange}
                 dateFormat="dd.MM.yyyy"
                 placeholderText={props.placeholder}
+                minDate={new Date()}
                 customInput={
                     <div className={css.customInput}>
                         <input {...field} {...props} className={css.input} />
